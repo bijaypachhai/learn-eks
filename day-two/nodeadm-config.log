@@ -1,0 +1,37 @@
+Aug 21 11:53:36 localhost systemd[1]: Starting nodeadm-config.service - EKS Nodeadm Config...
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:55 Checking user is root..
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:65 Loading configuration.. {"configSource": ["imds://user-data"], "configCache": "/run/eks/nodeadm/config.json"}
+Aug 21 11:53:39 localhost nodeadm[2010]: warn cli/config.go:25 failed to load cached config {"error": "open /run/eks/nodeadm/config.json: no such file or directory"}
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:75 Setting up nodeadm environment aspect...
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:84 Enriching configuration..
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:165 Fetching kubelet version..
+Aug 21 11:53:39 localhost nodeadm[2010]: info kubelet/version.go:30 Reading kubelet version from file {"path": "/etc/eks/kubelet-version.txt"}
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:171 Fetched kubelet version {"version": "v1.34.9"}
+Aug 21 11:53:39 localhost nodeadm[2010]: info init/init.go:172 Fetching instance details..
+Aug 21 11:53:39 localhost nodeadm[2010]: SDK 2026/08/21 11:53:39 DEBUG attempting waiter request, attempt count: 1
+Aug 21 11:54:09 localhost nodeadm[2010]: SDK 2026/08/21 11:54:09 DEBUG retrying request EC2/DescribeInstances, attempt 2
+Aug 21 11:54:42 localhost nodeadm[2010]: SDK 2026/08/21 11:54:42 DEBUG retrying request EC2/DescribeInstances, attempt 3
+Aug 21 11:55:17 localhost nodeadm[2010]: SDK 2026/08/21 11:55:17 DEBUG retrying request EC2/DescribeInstances, attempt 4
+Aug 21 11:56:02 localhost nodeadm[2010]: SDK 2026/08/21 11:56:02 DEBUG retrying request EC2/DescribeInstances, attempt 5
+Aug 21 11:56:52 localhost nodeadm[2010]: SDK 2026/08/21 11:56:52 DEBUG retrying request EC2/DescribeInstances, attempt 6
+Aug 21 11:57:42 localhost nodeadm[2010]: SDK 2026/08/21 11:57:42 DEBUG retrying request EC2/DescribeInstances, attempt 7
+Aug 21 11:58:32 localhost nodeadm[2010]: SDK 2026/08/21 11:58:32 DEBUG retrying request EC2/DescribeInstances, attempt 8
+Aug 21 11:59:22 localhost nodeadm[2010]: SDK 2026/08/21 11:59:22 DEBUG retrying request EC2/DescribeInstances, attempt 9
+Aug 21 12:00:12 localhost nodeadm[2010]: SDK 2026/08/21 12:00:12 DEBUG retrying request EC2/DescribeInstances, attempt 10
+Aug 21 12:01:02 localhost nodeadm[2010]: SDK 2026/08/21 12:01:02 DEBUG retrying request EC2/DescribeInstances, attempt 11
+Aug 21 12:01:52 localhost nodeadm[2010]: SDK 2026/08/21 12:01:52 DEBUG retrying request EC2/DescribeInstances, attempt 12
+Aug 21 12:02:42 localhost nodeadm[2010]: SDK 2026/08/21 12:02:42 DEBUG retrying request EC2/DescribeInstances, attempt 13
+Aug 21 12:03:32 localhost nodeadm[2010]: SDK 2026/08/21 12:03:32 DEBUG retrying request EC2/DescribeInstances, attempt 14
+Aug 21 12:03:39 localhost nodeadm[2010]: SDK 2026/08/21 12:03:39 DEBUG request failed with unretryable error https response error StatusCode: 0, RequestID: , canceled, context deadline exceeded
+Aug 21 12:03:39 localhost nodeadm[2010]: fatal cli/main.go:35 Command failed {"error": "expected err to be of type smithy.APIError, got operation error EC2: DescribeInstances, https response error StatusCode: 0, RequestID: , canceled, context deadline exceeded"}
+Aug 21 12:03:39 localhost systemd[1]: nodeadm-config.service: Main process exited, code=exited, status=1/FAILURE
+Aug 21 12:03:39 localhost systemd[1]: nodeadm-config.service: Failed with result 'exit-code'.
+Aug 21 12:03:39 localhost systemd[1]: Failed to start nodeadm-config.service - EKS Nodeadm Config.
+
+
+DEBUG retrying request EC2/DescribeInstances, attempt 14
+DEBUG request failed with unretryable error https response error StatusCode: 0, RequestID: , canceled, context deadline exceeded
+fatal cli/main.go:35 Command failed {"error": "expected err to be of type smithy.APIError, got operation error EC2: DescribeInstances, https response error StatusCode: 0, RequestID: , canceled, context deadline exceeded"}
+nodeadm-config.service: Main process exited, code=exited, status=1/FAILURE
+nodeadm-config.service: Failed with result 'exit-code'.
+Failed to start nodeadm-config.service - EKS Nodeadm Config.
